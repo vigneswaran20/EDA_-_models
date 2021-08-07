@@ -1,15 +1,4 @@
----
-title: "Tidy Tuesday - Paralympics"
-author: "Amy Mitchell-Whittington"
-date: "03/08/2021"
-output: github_document
----
 
-## Paralymic Games
-
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(tidytuesdayR)
@@ -19,9 +8,7 @@ library(extrafont)
 
 athletes <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-03/athletes.csv')
 
-```
 
-```{r explore, include=FALSE}
 
 # number of sports each athlete won a medal in during the 1980 Paralympics
 
@@ -61,9 +48,7 @@ paralympics_together <- left_join(paralympics_athlete_year, athlete_numbers, by=
   ) %>%
   round(digits = 2) 
 
-```
 
-```{r plot, echo=FALSE}
 
 ggplot(paralympics_together, 
        aes(
@@ -93,4 +78,4 @@ ggplot(paralympics_together,
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank())
 
-```
+
